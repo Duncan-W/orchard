@@ -1,0 +1,14 @@
+#content
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    background-color: aqua;
+}
+
+.read-more-wrap
+{
+    display: flow;
+    flex-flow: column nowrap;
+    justify-content: center;
+}

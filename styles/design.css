@@ -1,0 +1,137 @@
+:root
+{
+    --h1: 44px;
+    --h2: 36px;
+    --h3: 28px;
+    --h4: 24px;
+    --h5: 18px;
+    --h6: 12px;
+
+
+
+
+    --background-color: white;
+    --color-black: black;
+    --color-transparent: rgba(0, 0, 0, 0.5);
+    --color-red: rgb(255 98 36);
+    --color-lightred: rgb(255, 80, 6);
+    --color-darkred: rgb(212, 67, 18);
+
+
+    --font-1: "Circular", helvetica, arial, sans-serif;
+}
+
+/**
+* ? Resolution
+**/
+
+
+
+
+body
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-family: var(--font-1);
+    
+}
+
+.contain
+{
+    height: auto;
+    padding: 0 44px 0 44px;
+}
+
+/**
+* ! Buttons
+**/
+
+.button
+{
+    cursor: pointer;
+    padding: 0;
+
+    border-radius: 8px;
+    transition: 0.08s;
+}
+
+.button:hover
+{
+    transform: scale(1.05);
+}
+
+/**
+* ! Button [END]
+**/
+
+img
+{
+    height: 150px;
+    width: 150px;
+    display: block;
+    border-radius: 8px;
+}
+
+ul
+{
+    display: inline-block;
+    text-align: center;
+    font-size: var(--h2);
+    line-height: 1.5;
+}
+
+li
+{
+    text-align: left;
+    font-size: var(--h4);
+}
+
+p
+{
+    margin: 0;
+    padding: 10px;
+}
+
+.read-more-state
+{
+    display: none;
+}
+
+/**
+* ? Drop down boxes code 
+**/
+
+.read-more-target
+{
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: 0.25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target
+{
+    opacity: 1;
+    font-size: inherit;
+    max-height: auto;
+}
+
+.read-more-trigger
+{
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 2;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/**
+* ? Drop down boxes code [END]
+**/
+
+

@@ -1,0 +1,118 @@
+#header
+{
+    height: auto;
+    font-size: var(--h1);
+}
+
+#events-toolkit
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: var(--h3);
+}
+
+.events-toolkit-paragraph
+{
+    height: auto;
+    width: auto;
+    max-width: 1200px;
+
+    font-size: var(--h3);
+}
+
+.content-header
+{
+    font-size: var(--h1);
+    line-height: 2;
+}
+
+.button-section
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+
+
+}
+
+@media screen and (min-width: 900px) 
+{
+    .button-section 
+    {
+      flex-flow: row;
+    }
+}
+
+.button-box
+{
+    height: auto;
+    min-height: 100px;
+    width: auto;
+    max-width: 520px;
+    font-size: var(--h4);
+    padding: 10px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    position: relative;
+}
+
+@property --angle
+{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.button-box::after, .button-box::before
+{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 90%, var(--color-black));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 10px;
+    animation: 8s spin linear infinite;
+}
+
+.button-box::before
+{
+    filter: blur(28px);
+    opacity: 0.15;
+}
+
+@keyframes spin
+{
+    from
+    {
+        --angle: 0deg;
+    }
+    to
+    {
+        --angle: 360deg;
+    }
+}
+
+.button-box-header
+{
+    font-size: var(--h2);
+}
+
+.button-box-paragraph
+{
+    height: auto;
+    width: 530px;
+}
+
+
+
