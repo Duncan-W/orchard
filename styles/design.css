@@ -8,10 +8,8 @@
     --h6: 12px;
 
 
-
-
     --background-color: white;
-    --color-black: black;
+    --border-animation-color: black;
     --color-transparent: rgba(0, 0, 0, 0.5);
     --color-red: rgb(255 98 36);
     --color-lightred: rgb(255, 80, 6);
@@ -19,13 +17,8 @@
 
 
     --font-1: "Circular", helvetica, arial, sans-serif;
+
 }
-
-/**
-* ? Resolution
-**/
-
-
 
 
 body
@@ -39,14 +32,107 @@ body
     
 }
 
+details
+{
+    margin: 0px auto;
+    max-width: 950px;
+
+
+
+}
+
+summary
+{
+    cursor: pointer;
+
+    width: auto;
+    max-width: fit-content;
+
+    font-size: var(--h2);
+    text-align: center;
+
+    margin: 15px auto;
+    padding: 5px 5px;
+    border-radius: 4px;
+
+    position: relative;
+
+    background-color: var(--background-color);
+}
+
 .contain
 {
     height: auto;
     padding: 0 44px 0 44px;
 }
 
+.header
+{
+    height: auto;
+    font-size: var(--h1);
+}
+
+.header-content-box
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: var(--h3);
+}
+
+.header-box-paragraph
+{
+    height: auto;
+    width: auto;
+    max-width: 1200px;
+
+    font-size: var(--h3);
+}
+
+.content
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    
+}
+
+.paragraph-header
+{
+    font-size: var(--h3);
+    font-weight: bold;
+
+
+
+}
+
+.paragraph-content
+{
+    font-size: var(--h4);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
-* ! Buttons
+* ! Button
 **/
 
 .button
@@ -81,6 +167,7 @@ ul
     text-align: center;
     font-size: var(--h2);
     line-height: 1.5;
+    padding-top: 0;
 }
 
 li
@@ -95,43 +182,66 @@ p
     padding: 10px;
 }
 
-.read-more-state
+.ul-title
 {
-    display: none;
+    font-size: var(--h2);
+    padding: 0;
 }
 
 /**
-* ? Drop down boxes code 
+* ! Border Animation
 **/
 
-.read-more-target
+@property --angle
 {
-    opacity: 0;
-    max-height: 0;
-    font-size: 0;
-    transition: 0.25s ease;
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
 
-.read-more-state:checked ~ .read-more-wrap .read-more-target
+summary::after, summary::before, .button-box::after, .button-box::before
 {
-    opacity: 1;
-    font-size: inherit;
-    max-height: auto;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), white,white,black,white,white, black,white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 8px;
+    animation: 8s spin linear infinite;
 }
 
-.read-more-trigger
+/* transparent 90%, var(--border-animation-color), var(--background-color) (Original single line border animation) */
+
+summary::before, .button-box::before
 {
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 8px;
-    font-size: 14px;
-    line-height: 2;
-    border: 1px solid black;
-    border-radius: 4px;
+    filter: blur(28px);
+    opacity: 0.15;
+}
+
+
+@keyframes spin
+{
+    from
+    {
+        --angle: 0deg;
+    }
+    to
+    {
+        --angle: 360deg;
+    }
 }
 
 /**
-* ? Drop down boxes code [END]
+* ! Border Animation [END]
 **/
+
+
+
+
 
 

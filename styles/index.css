@@ -1,60 +1,22 @@
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #FF3C00; 
-}
-
-h3 {
-
-    color: hsl(287, 79%, 37%); 
-}
-
-
-#header
-{
-    height: auto;
-    font-size: var(--h1);
-}
-
-#events-toolkit
-{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    font-size: var(--h3);
-}
-
-.events-toolkit-paragraph
-{
-    height: auto;
-    width: auto;
-    max-width: 1200px;
-
-    font-size: var(--h3);
-}
-
 .content-header
 {
     font-size: var(--h1);
-    line-height: 2;
+    margin-bottom: 25px;
 }
 
 .button-section
 {
+    max-width: 2000px;
+    width: auto;
+
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-
+    justify-content: center;
 
 }
 
-@media screen and (min-width: 900px) 
-{
-    .button-section 
-    {
-      flex-flow: row;
-    }
-}
+
 
 .button-box
 {
@@ -63,8 +25,10 @@ h3 {
     width: auto;
     max-width: 520px;
     font-size: var(--h4);
+
     padding: 10px;
-    border-radius: 10px;
+    margin: 10px 25px;
+    border-radius: 6px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -72,47 +36,6 @@ h3 {
     justify-content: space-between;
     background-color: var(--background-color);
     position: relative;
-}
-
-@property --angle
-{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-.button-box::after, .button-box::before
-{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 90%, var(--color-black));
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 4px;
-    border-radius: 10px;
-    animation: 8s spin linear infinite;
-}
-
-.button-box::before
-{
-    filter: blur(28px);
-    opacity: 0.15;
-}
-
-@keyframes spin
-{
-    from
-    {
-        --angle: 0deg;
-    }
-    to
-    {
-        --angle: 360deg;
-    }
 }
 
 .button-box-header
@@ -123,7 +46,8 @@ h3 {
 .button-box-paragraph
 {
     height: auto;
-    width: 530px;
+    width: auto;
+    max-width: 530px;
 }
 
 
